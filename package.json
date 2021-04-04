@@ -1,0 +1,11 @@
+{
+  "name": "wbdv-sp21-01-jiahao-cai-server-node",
+  "version": "1.0.0",
+  "description": "Sample node server for web dev class",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jiahao Cai",
+  "license": "ISC"
+}
