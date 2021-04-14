@@ -6,12 +6,14 @@ const findAllQuizzes = () => {
     // return quizzes
     return quizzesModel.find()
 }
+
 const findQuizById = (quizId) => {
     return quizzesModel
         .findById(quizId)
         .populate("questions")
         .exec()
 }
+
 const updateQuiz = () => {}
 const deleteQuiz = () => {}
 
