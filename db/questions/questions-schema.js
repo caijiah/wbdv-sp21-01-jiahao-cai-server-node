@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const questionSchema = mongoose.Schema({
+const questionsSchema = mongoose.Schema({
     _id: String,
     title: String,
     question: String,
@@ -10,4 +10,4 @@ const questionSchema = mongoose.Schema({
     choices : [String],
 }, {collection: "questions"})
 
-module.exports = questionSchema
+module.exports = questionsSchema
