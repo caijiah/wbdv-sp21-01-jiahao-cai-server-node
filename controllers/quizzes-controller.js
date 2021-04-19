@@ -1,24 +1,20 @@
-const quizzesService = require("../services/quizzes/quizzes-service")
+const quizzesService = require("../services/quizzes-service")
 
 module.exports = (app) => {
     const findAllQuizzes = (req, res) => {
-        // const quizzes = quizzesService.findAllQuizzes()
-        // res.send(quizzes)
         quizzesService.findAllQuizzes()
             .then((quizzes) => {
-                res.send(quizzes)
+                res.json(quizzes)
             })
     }
     const findQuizById = (req, res) => {
-        const quizId = req.params['qid']
-        // const quiz = quizzesService.findQuizById(quizId)
-        // res.send(quiz)
+        const quizId = req.params['qzid']
         quizzesService.findQuizById(quizId)
             .then((quiz)=> {
-                res.send(quiz)
+                res.json(quiz)
             })
     }
 
     app.get("/api/quizzes", findAllQuizzes)
-    app.get("/api/quizzes/:qid", findQuizById)
+    app.get("/api/quizzes/:qzid", findQuizById)
 }

@@ -1,19 +1,18 @@
-const questionsService = require("../services/questions/questions-service")
+const questionsService = require("../services/questions-service")
 
 module.exports = (app) => {
     const findQuestionsForQuiz = (req, res) => {
         const qzid = req.params['qzid']
-        // res.send(questionsService.findQuestionsForQuiz(qzid))
         questionsService.findQuestionsForQuiz(qzid)
             .then((questions) => {
-                res.send(questions)
+                res.json(questions)
             })
     }
 
     const findAllQuestions = (req, res) => {
         questionsService.findAllQuestions()
             .then((questions) => {
-                res.send(questions)
+                res.json(questions)
             })
     }
 
@@ -21,7 +20,7 @@ module.exports = (app) => {
         const quid = req.params['quid']
         questionsService.findQuestionById(quid)
             .then(question => {
-                res.send(question)
+                res.json(question)
             })
     }
 
