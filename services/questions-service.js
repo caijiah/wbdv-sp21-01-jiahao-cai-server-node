@@ -1,4 +1,4 @@
-const questionsDao = require("../../daos/questions-dao")
+const questionsDao = require("../daos/questions-dao")
 
 
 const findAllQuestions = () => {

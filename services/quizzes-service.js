@@ -1,4 +1,4 @@
-const quizzesDao = require("../../daos/quizzes-dao")
+const quizzesDao = require("../daos/quizzes-dao")
 
 const findAllQuizzes = () => {
     return quizzesDao.findAllQuizzes()
