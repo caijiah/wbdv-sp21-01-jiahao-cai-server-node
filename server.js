@@ -2,13 +2,10 @@ const express = require('express')
 const app = express()
 
 require('dotenv').config();
-const user = process.env.MONG_USER
-const password = process.env.MONGO_PASS
-const local_db = 'mongodb://localhost:27017/whiteboard-01'
-const remote_db = `mongodb+srv://${user}:${password}@cluster0.hzsnv.mongodb.net/myFirstDatabase?whiteboard=true&w=majority`
+const MONGODB_URI = process.env.MONGODB_URI
 
 const mongoose = require('mongoose');
-mongoose.connect(remote_db,
+mongoose.connect(MONGODB_URI,
                  {useNewUrlParser: true, useUnifiedTopology: true});
 
 // configure CORS
