@@ -14,6 +14,6 @@ module.exports = (app) => {
             .then(attempts => res.json(attempts))
     }
 
-    app.post("/api/quizzes/:qid/attempts", createAttempt)
-    app.get("/api/quizzes/:qid/attempts", findAttemptsForQuiz)
+    app.post("/api/quizzes/:qzid/attempts", createAttempt)
+    app.get("/api/quizzes/:qzid/attempts", findAttemptsForQuiz)
 }
