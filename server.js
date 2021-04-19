@@ -1,8 +1,14 @@
 const express = require('express')
 const app = express()
 
+require('dotenv').config();
+const user = process.env.MONG_USER
+const password = process.env.MONGO_PASS
+const local_db = 'mongodb://localhost:27017/whiteboard-01'
+const remote_db = `mongodb+srv://${user}:${password}@cluster0.hzsnv.mongodb.net/myFirstDatabase?whiteboard=true&w=majority`
+
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/whiteboard-01',
+mongoose.connect(remote_db,
                  {useNewUrlParser: true, useUnifiedTopology: true});
 
 // configure CORS
@@ -24,4 +30,4 @@ require('./controllers/quizzes-controller')(app)
 require('./controllers/questions-controller')(app)
 require('./controllers/quiz-attempts-controller')(app)
 
-app.listen(4000)
+app.listen(process.env.PORT || 4000)
