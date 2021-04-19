@@ -10,7 +10,7 @@ const scoreQuiz = (questions) => {
 const findAttemptsForQuiz = (qzid) => quizAttemptsModel.find({quiz: qzid})
     .populate('quiz', 'title _id')
 
-const createAttempts = (qzid, attempt) =>
+const createAttempt = (qzid, attempt) =>
     quizAttemptsModel.create({quiz : qzid, answers: attempt, score: scoreQuiz(attempt)})
 
-module.exports = {createAttempts, findAttemptsForQuiz}
+module.exports = {createAttempt, findAttemptsForQuiz}
